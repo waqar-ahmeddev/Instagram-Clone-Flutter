@@ -29,6 +29,42 @@ class _SCreenState extends State<SCreen> {
      "images/post_5.png",
      "images/post_7.png",
   ];
+    List<String> Profilename =[
+      "Hoorain",
+      "Waqar",
+      "Digital Marketer",
+      "Ayesha",
+      "Hina",
+      "Ahmed",
+      "Noor",
+    ];
+    List<String> Names =[
+      "Nawab",
+      "Ayesha",
+      "Hamza",
+      "Nawal",
+      "Kiran",
+      "Luqman",
+      "Laeeq",
+    ];
+    List<String> CommentBold = [
+      "Ayesha",
+      "Hamza",
+      "Hoorain",
+      "luqman",
+      "Laeeq",
+      "Nawal",
+      "Qaisar",
+    ];
+     List<String> Comments = [
+      " This is the Amazing pic Keep it up, keep going, Best of luck.",
+      " Nice Pic Boy",
+      " is ? Digital Marketing course is Available",
+      " Nice pic Where Are you Nowadays",
+      " Gorgeous",
+      " Beautiful bro",
+      " Maasha Allah",
+    ];
   
   @override
   Widget build(BuildContext context) {
@@ -81,7 +117,9 @@ class _SCreenState extends State<SCreen> {
               ),            
             ),
                 Divider(),
-                Column(children: List.generate(7, (index) => Column(children: [
+                Column(children: List.generate(7, (index) => Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
                   Row(children: [
                     Container(
                       padding: EdgeInsets.all(10),
@@ -94,7 +132,7 @@ class _SCreenState extends State<SCreen> {
                            ),
                         ), 
                       ),
-                        Text("Profile Name"),
+                        Text(Profilename[index]),
                         Spacer(),
                         IconButton(
                           onPressed: (){
@@ -141,19 +179,63 @@ class _SCreenState extends State<SCreen> {
                      
                   ],
                   ),
-
-               ],
+                       SizedBox(height: 1),
+                      Container(
+                         padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            RichText(text: TextSpan(
+                              style: TextStyle(color: Colors.black),
+                              children:
+                             [
+                              TextSpan(
+                              text: 'Liked bye ',
+                            ),
+                            TextSpan(
+                              text: Names[index],style: TextStyle(fontWeight: FontWeight.bold)
+                            ),
+                            TextSpan(
+                              text: ' and others ',
+                            ),                  
+                            
+                            ],
+                            ),
+                            ),
+                            SizedBox(height: 6),
+                            RichText(text: TextSpan(
+                              style: TextStyle(color: Colors.black),
+                              children:
+                             [
+                            TextSpan(
+                              text: CommentBold[index],style: TextStyle(fontWeight: FontWeight.bold)
+                            ),
+                            TextSpan(
+                              text: Comments[index],
+                            ),                                        
+                            ],                   
+                            ),
+                            ),
+                            SizedBox(height: 6),
+                            RichText(text: TextSpan(
+                              children:
+                             [
+                              TextSpan(
+                              text: 'View All 12 comments',style: TextStyle(color: Colors.black38),
+                            ),
+                          ],      
+                        )
+                      )
+                   ],
+                        
+                  ),
+                ),
+                    ],
+                  ),                      ),
               ),
-            ),
-          ),
-          ],
-
-        ),
-
-       ),
-
+            ],
+         ),
+      ),
     );
-
   }
-
 }
